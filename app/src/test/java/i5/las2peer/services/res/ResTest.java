@@ -144,11 +144,11 @@ public class ResTest {
     try {
       c.setLogin(testAgentAdam.getIdentifier(), testPassAdam);
       ClientResponse result = c.sendRequest("GET", mainPath + "/test", """
-{
-  "test": 12
-}""");
+""");
     
       Assert.assertEquals("Status code equals 200 [322960]", result.getHttpCode(), 200);
+
+      Assert.assertEquals("Status code equals 201 [846606]", result.getHttpCode(), 201);
 
       System.out.println("Result of 'test$HTTP_Method_Name$': " + result.getResponse().trim());
     } catch (Exception e) {
